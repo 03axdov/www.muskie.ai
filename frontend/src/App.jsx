@@ -4,7 +4,9 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
+import Landing from "./pages/Landing"
 import ProtectedRoute from "./components/ProctedRoute"
+
 
 function Logout() {
   localStorage.clear()
@@ -21,8 +23,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Landing />}/>
         <Route 
-          path="/"
+          path="/home"
           element={
             <ProtectedRoute>
               <Home />

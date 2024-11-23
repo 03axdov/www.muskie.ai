@@ -22,7 +22,7 @@ function Form({route, method}) {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access)
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh)
 
-                navigate("/")
+                navigate("/home")
             } else {
                 navigate("/login")
             }

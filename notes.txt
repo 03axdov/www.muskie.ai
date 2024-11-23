@@ -1,0 +1,5 @@
+To run, open two terminals. 
+
+In one, `cd frontend` and then `npm run dev`
+
+in the other `cd backend` and then `python manage.py runserver`
