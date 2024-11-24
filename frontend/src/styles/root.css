@@ -5,5 +5,7 @@
     --border: rgb(50,50,50);
     --blue: #008ff8;
     --blue-dark: #0082df;
+    --blue-light: #00aaf8;
     --form-width: 35%;
+    --toolbar-height: 60px;
 }

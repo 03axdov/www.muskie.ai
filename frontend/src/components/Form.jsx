@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom"
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"
 import "../styles/Form.css"
 import "../styles/main.css"
+import "../styles/Form.scss"
 
 function Form({route, method}) {
     const [username, setUsername] = useState("")
@@ -35,9 +36,29 @@ function Form({route, method}) {
         }
     }
 
+    const triggerList = Array(400).fill(0)
+    const vrLayerList = Array(20).fill(0)
+
     return <div className="form-page">
         <div className="form-image-container">
-            <img src="images/logo.jpg" className="form-image"/>
+            <div className="container">
+                {triggerList.map((_ , i) => <div className="trigger" key={i}></div>)}
+                <div className="monitor">
+                    <div className="camera o-x">
+                        <div className="camera o-y">
+                            <div className="camera o-z">
+                                <div className="vr">
+                                    {vrLayerList.map((_, i) => (
+                                        <div className="vr_layer" key={i}>
+                                            <div className="vr_layer_item" key={i}></div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div className="form-container">
             <form onSubmit={handleSubmit} className="form">
@@ -59,6 +80,8 @@ function Form({route, method}) {
                 <button className="form-button" type="submit">{name}</button>
 
             </form>
+            {method == "login" ? <div>Don't have an account? Click <span className="form-link" onClick={() => navigate("/register")}>here</span> to create one.</div> : ""}
+            {method == "register" ? <div>Already have an account? Click <span className="form-link" onClick={() => {navigate("/login")}}>here</span> in order to sign in.</div> : ""}
         </div>
     </div>
         

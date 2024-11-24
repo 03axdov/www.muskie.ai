@@ -9,20 +9,9 @@
 .form-container {
     width: var(--form-width);
     display: flex;
-    justify-content: center;
-
-}
-
-.form-image-container {
-    width: calc(100% - var(--form-width));
-    background: var(--background-dark);
-    height: 100%;
-    border-right: 1px solid var(--border);
-    box-sizing: border-box;
-    display: flex;
     align-items: center;
-    justify-content: center;
-}
+    flex-direction: column;
+}    
 
 .form-image {
     width: 85%;
@@ -74,10 +63,20 @@
 }
 
 .form-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--border);
     width: 100%;
+    letter-spacing: 1px;
     text-align: center;
     padding: 10px;
+}
+
+.form-link {
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.form-link:hover {
+    color: var(--blue-light);
 }
