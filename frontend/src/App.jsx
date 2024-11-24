@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import Landing from "./pages/Landing"
 import ProtectedRoute from "./components/ProctedRoute"
+import "./styles/main.css"
 
 
 function Logout() {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import api from "../api"
+import DatasetElement from "../components/DatasetElement"
 
 // This is the personal view. /home
 function Home() {
@@ -42,7 +43,9 @@ function Home() {
     return <div>
         <div>
             <h2>Datasets</h2>
-
+            {datasets.map((dataset) => (
+                <DatasetElement dataset={dataset} key={dataset.id} />
+            ))}
         </div>
         <h2>Create a Dataset</h2>
         <form onSubmit={createDataset}>

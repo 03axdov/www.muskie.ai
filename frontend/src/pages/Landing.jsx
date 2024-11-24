@@ -1,8 +1,12 @@
+import "../styles/Landing.css"
+
 // The default page. Login not required.
 function Landing() {
-    return <div>
-        <h1>Landing Page</h1>
-    </div>
+    return (
+        <div className="landing-logo-container">
+            <img src="images/logo.jpg" className="landing-logo"/>
+        </div>
+    )
 }
 
 export default Landing
