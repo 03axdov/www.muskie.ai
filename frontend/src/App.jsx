@@ -1,5 +1,5 @@
 import react from "react"
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
+import { Routes, Route, Navigate, useNavigate} from "react-router-dom"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
@@ -20,25 +20,35 @@ function RegisterAndLogout() {
 }
 
 function App() {
+  const navigate = useNavigate()
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />}/>
-        <Route 
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/login" element={<Login />}/>
-        <Route path="/logout" element={<Logout />}/>
-        <Route path="/register" element={<RegisterAndLogout />}/>
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
-    </BrowserRouter>
+    <div id="main">
+      <nav id="toolbar">
+        <img id="toolbar-logo" src="images/logoToolbar.jpg" onClick={() => navigate("/")}/>
+      </nav>
+
+      <div id="app">
+        <Routes>
+          <Route path="/" element={<Landing />}/>
+          <Route 
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />}/>
+          <Route path="/logout" element={<Logout />}/>
+          <Route path="/register" element={<RegisterAndLogout />}/>
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      </div>
+      
+
+    </div>
+    
   )
 }
 
