@@ -1,0 +1,9 @@
+:root {
+    --background: #0d1017;
+    --background-dark: rgb(9, 11, 15);
+    --toolbar: #181d25;
+    --border: rgb(50,50,50);
+    --blue: #008ff8;
+    --blue-dark: #0082df;
+    --form-width: 35%;
+}

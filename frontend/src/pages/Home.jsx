@@ -18,7 +18,9 @@ function Home() {
         .get("/api/datasets/")
         .then((res) => res.data)
         .then((data) => {setDatasets(data); console.log(data)})
-        .catch((err) => alert(err))
+        .catch((err) => {
+            console.log(err)
+        })
     }
 
     const deleteDataset = (id) => {

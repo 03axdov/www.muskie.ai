@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound"
 import Landing from "./pages/Landing"
 import ProtectedRoute from "./components/ProctedRoute"
 import "./styles/main.css"
+import "./styles/root.css"
 
 
 function Logout() {
@@ -26,6 +27,11 @@ function App() {
     <div id="main">
       <nav id="toolbar">
         <img id="toolbar-logo" src="images/logoToolbar.jpg" onClick={() => navigate("/")}/>
+        <p className="toolbar-text" onClick={() => navigate("/")}>Solutions</p>
+        <p className="toolbar-text" onClick={() => navigate("/home")}>Home</p>
+
+        <p className="toolbar-text toolbar-right" onClick={() => navigate("/login")}>Sign in</p>
+        <button className="toolbar-button toolbar-register" onClick={() => navigate("/register")}>Register</button>
       </nav>
 
       <div id="app">
